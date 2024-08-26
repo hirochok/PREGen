@@ -35,10 +35,10 @@ python main.py --api_key "Your OpenAI API key" --input_prompt "Mario" \
 --final_output_dir "path" --iterations 5 --batches 2
 ```
 
-* The code uses Playground v2.5 as the text-to-image generative model and CLIP as the distance metric.
+* The code uses Playground v2.5 as the text-to-image generative model and CLIP as the distance metric `_d_`.
 * Generation using the names of copyrighted character (i.e. direct anchors) in the COPYCAT list as the input prompt is supported.
 * As the negative prompt, we use the character name and 5 CO-OCCURRENCE-LAION keywords, which can be found on the [COPYCAT repository](https://github.com/princeton-nlp/CopyCat). Specify the path of the negative prompt list as keywords_csv_path.
-* Iterations and batches correspond to parameter `n` and `b` in the algorithm.
+* Iterations and batches correspond to parameter `_n_` and `_b_` in the algorithm.
 * The images produced internally by the algorithm will be saved in image_output_dir and the final output will be saved in final_output_dir.
 
 ## Prompts for evaluating performance
