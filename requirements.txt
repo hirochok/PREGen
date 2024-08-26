@@ -1,0 +1,10 @@
+openai
+torch
+torchvision
+pandas
+openpyxl
+Pillow
+tqdm
+diffusers
+clip
+git+https://github.com/openai/CLIP.git
