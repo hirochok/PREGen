@@ -12,13 +12,42 @@ PREGen is an algorithm to mitigate copyright infringement risks by genericizing 
   <img src="asset/mario_sample.png" alt="Example Image" width="450"/>
 </p>
 
-PREGen essentially consists of four steps: 1) converting the original prompt to a clean prompt, 2) rewrite the clean prompt to obtain a set of rewritten prompts, 3) generate images using the rewritten prompts, and 4) quantify the originality of the generated images. This repository contains the code for steps 1), 2) and 4). As for the image generation step, any text-to-image generative model can be used. 
+## How to use
 
-## Evaluating performance
+Clone this repository using git.
+
+```bash
+git clone https://github.com/hirochok/PREGen.git
+cd PREGen
+```
+
+Install all required packages using pip.
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the main file.
+
+```bash
+python main.py --api_key "Your OpenAI API key" --input_prompt "Mario" \
+--keywords_csv_path "path/50keywords_laion2b_top5.csv" --image_output_dir "path" \
+--final_output_dir "path" --iterations 5 --batches 2
+```
+
+* The code uses Playground v2.5 as the text-to-image generative model.
+* Generation using the names of copyrighted character (i.e. direct anchors) in the COPYCAT list as the input prompt is supported.
+* As the negative prompt, we use the character name and 5 CO-OCCURRENCE-LAION keywords, which can be found on the [COPYCAT repository](https://github.com/princeton-nlp/CopyCat). Spedify the path of the negative prompt list as keywords_csv_path.
+* Iterations and batches correspond to parameter n and b in the algorithm (see the paper for details).
+* The images produced internally by the algorithm will be saved in image_output_dir and the final output will be saved in final_output_dir.
+
+## Prompts for evaluating performance
 
 In the paper, we evaluate the performance of PREGen on COPYCAT. The direct and indirect anchors (names of copyrighted charcyers and their 50-word descriptions, respectively) used in the experiment can be found in this repository. 
 
 ## Citation
+
+Please see the citation information below for citing this work:
 
 ```bibtex
 @article{chibaokabe2024tackling,
