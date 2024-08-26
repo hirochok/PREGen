@@ -37,7 +37,7 @@ python main.py --api_key "Your OpenAI API key" --input_prompt "Mario" \
 
 * The code uses Playground v2.5 as the text-to-image generative model.
 * Generation using the names of copyrighted character (i.e. direct anchors) in the COPYCAT list as the input prompt is supported.
-* As the negative prompt, we use the character name and 5 CO-OCCURRENCE-LAION keywords, which can be found on the [COPYCAT repository](https://github.com/princeton-nlp/CopyCat). Spedify the path of the negative prompt list as keywords_csv_path.
+* As the negative prompt, we use the character name and 5 CO-OCCURRENCE-LAION keywords, which can be found on the [COPYCAT repository](https://github.com/princeton-nlp/CopyCat). Specify the path of the negative prompt list as keywords_csv_path.
 * Iterations and batches correspond to parameter n and b in the algorithm (see the paper for details).
 * The images produced internally by the algorithm will be saved in image_output_dir and the final output will be saved in final_output_dir.
 
